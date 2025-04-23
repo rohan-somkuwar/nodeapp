@@ -1,0 +1,25 @@
+version: 0.2
+env:
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Deployment Started...
+  pre_build:
+    commands:
+      - echo Installing dependencies
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`   
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
